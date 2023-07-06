@@ -8,7 +8,7 @@ return {
       return {}
     end
     nvim_treesitter_config.setup {
-      ensure_installed = { "lua", "vim", "rust", "yuck", "go", "python", "c", "zig", "markdown", "markdown_inline", "dart", "bash" },
+      ensure_installed = { "lua", "vim", "rust", "yuck", "go", "python", "c", "zig", "markdown", "markdown_inline", "dart", "bash", "javascript" },
       sync_install = false,
       highlight = {
         enable = true,

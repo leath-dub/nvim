@@ -2,15 +2,15 @@ return {
   "folke/trouble.nvim",
   lazy = true,
   keys = {
-	{"<leader>t", vim.cmd.TroubleToggle},
+    {"<leader>t", vim.cmd.TroubleToggle},
   },
   cmd = {
     "Trouble",
-	"TroubleClose",
-	"TroubleToggle",
-	"TroubleRefresh",
+    "TroubleClose",
+    "TroubleToggle",
+    "TroubleRefresh",
   },
   dependencies = {
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
+    { "nvim-tree/nvim-web-devicons", lazy = true },
   },
 }

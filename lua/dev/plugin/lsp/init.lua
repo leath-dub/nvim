@@ -10,7 +10,7 @@ return {
     -- Mason stuff
     require("mason").setup()
     require("mason-lspconfig").setup {
-      ensure_installed = { "gopls", "lua_ls", "rust_analyzer", "zls", "ansiblels", "pyright", "jdtls" }
+      ensure_installed = { "gopls", "lua_ls", "rust_analyzer", "zls", "ansiblels", "pyright", "jdtls", "denols" }
     }
     require("mason-lspconfig").setup_handlers {
       function (server_name)

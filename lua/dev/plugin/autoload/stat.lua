@@ -19,16 +19,16 @@ return {
         Stat.mod.git_diff
       },
       theme = {
-        ["N"] = { fg = "#1f1f28", bg = "#9d7cd8" },
-        ["I"] = { fg = "#1f1f28", bg = "#7aa2f7" },
-        ["V"] = { fg = "#1f1f28", bg = "#ff9e64" },
-        ["C"] = { fg = "#1f1f28", bg = "#f7768e" },
-        ["T"] = { fg = "#1f1f28", bg = "#9ece6a" },
-        ["S"] = { fg = "#1f1f28", bg = "#db4b4b" },
-        ["File"] = { fg = "#c0caf5", bg = "#24283b" },
-        ["Filetype"] = { fg = "#c0caf5", bg = "#24283b" },
-        ["GitDiffDeletion"] = { fg = "#b2555b", bg = "#24283b" },
-        ["GitDiffInsertion"] = { fg = "#266d6a", bg = "#24283b" }
+        ["N"] = { fg = "#232136", bg = "#c4a7e7" },
+        ["I"] = { fg = "#232136", bg = "#3e8fb0" },
+        ["V"] = { fg = "#232136", bg = "#f6c177" },
+        ["C"] = { fg = "#232136", bg = "#eb6f92" },
+        ["T"] = { fg = "#232136", bg = "#56949f" },
+        ["S"] = { fg = "#232136", bg = "#b4637a" },
+        ["File"] = { fg = "#e0def4", bg = "#2a273f" },
+        ["Filetype"] = { fg = "#e0def4", bg = "#2a273f" },
+        ["GitDiffDeletion"] = { fg = "#b4637a", bg = "#2a273f" },
+        ["GitDiffInsertion"] = { fg = "#56949f", bg = "#2a273f" }
       }
     }
   end

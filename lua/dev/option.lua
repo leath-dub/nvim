@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd("FileType", {
     local indent = ({
       lua = 2,
       yaml = 2,
+      dart = 2,
       go = { expandtab = false, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
         vim.opt.listchars = { tab = '│ ', trail = '¬' }
       end},
