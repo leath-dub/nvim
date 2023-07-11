@@ -48,6 +48,10 @@ vim.api.nvim_create_autocmd("FileType", {
       lua = 2,
       yaml = 2,
       dart = 2,
+      html = 2,
+      markdown = { expandtab = true, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
+        vim.cmd.set("spell")
+      end },
       go = { expandtab = false, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
         vim.opt.listchars = { tab = '│ ', trail = '¬' }
       end},
@@ -68,4 +72,3 @@ vim.api.nvim_create_autocmd("FileType", {
     end
   end
 })
-
