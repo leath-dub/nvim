@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   require("dev.plugin.lsp"),
-  "folke/neodev.nvim",
+  { "folke/neodev.nvim", opts = {} },
   { import = "dev.plugin.autoload" },
 })
 
