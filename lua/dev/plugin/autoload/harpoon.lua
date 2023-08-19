@@ -9,6 +9,6 @@ return {
     {"<leader>k", function () return require("harpoon.ui").nav_file(4) end},
   },
   dependencies = {
-	{ "nvim-lua/plenary.nvim", lazy = true },
+    { "nvim-lua/plenary.nvim", lazy = true },
   }
 }
