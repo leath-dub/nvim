@@ -58,6 +58,47 @@ local function buffer_line(stat)
   end
 end
 
+local function load_lualine_theme(theme_name)
+  local path = table.concat { 'lua/lualine/themes/', theme_name, '.lua' }
+  local files = vim.api.nvim_get_runtime_file(path, true)
+  if #files <= 0 then
+    path = table.concat { 'lua/lualine/themes/', theme_name, '/init.lua' }
+    files = vim.api.nvim_get_runtime_file(path, true)
+  end
+  local retval = {}
+  local n_files = #files
+  if n_files == 0 then
+    -- No match found
+    error(path .. ' Not found')
+  elseif n_files == 1 then
+    -- when only one is found run that and return it's return value
+    retval = dofile(files[1])
+  else
+    -- put entries from user config path in front
+    local user_config_path = vim.fn.stdpath('config')
+    table.sort(files, function(a, b)
+      return vim.startswith(a, user_config_path) or not vim.startswith(b, user_config_path)
+    end)
+    -- More then 1 found . Use the first one that isn't in lualines repo
+    local sep = package.config:sub(1, 1)
+    local lualine_repo_pattern = table.concat({ 'lualine.nvim', 'lua', 'lualine' }, sep)
+    local file_found = false
+    for _, file in ipairs(files) do
+      if not file:find(lualine_repo_pattern) then
+        retval = dofile(file)
+        file_found = true
+        break
+      end
+    end
+    if not file_found then
+      -- This shouldn't happen but somehow we have multiple files but they
+      -- appear to be in lualines repo . Just run the first one
+      retval = dofile(files[1])
+    end
+  end
+  return retval
+end
+
 return {
   "leath-dub/stat.nvim",
   event = "Colorscheme",
@@ -66,6 +107,7 @@ return {
     if not ok then
       return {}
     end
+
     local ___ = Stat.___
     stat.setup {
       winbar = {
@@ -77,9 +119,7 @@ return {
         Stat.mod.filetype,
         Stat.mod.git_diff
       },
-      theme = {
-        stat.themes.rose_pine_moon,
-      },
+      theme = stat.lib.lualine('decay'),
     }
   end
 }

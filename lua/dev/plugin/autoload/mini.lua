@@ -1,19 +1,10 @@
+local function default_mini_setup(plg)
+  return function ()
+    require(plg).setup()
+  end
+end
+
 return {{
-  "echasnovski/mini.cursorword",
-  config = function ()
-    vim.api.nvim_set_hl(0, "MiniCursorword", { link = "Visual" })
-    require("mini.cursorword").setup({ delay = 500 })
-  end
-}, {
-  "echasnovski/mini.animate",
-  config = function ()
-    require("mini.animate").setup({
-      cursor = {
-        enable = false,
-      }
-    })
-  end
-}, {
   "echasnovski/mini.hipatterns",
   config = function ()
     local hipatterns = require("mini.hipatterns")
@@ -25,9 +16,7 @@ return {{
   end
 }, {
   "echasnovski/mini.comment",
-  config = function ()
-    require("mini.comment").setup()
-  end
+  config = default_mini_setup("mini.comment"),
 }, {
   "echasnovski/mini.indentscope",
   config = function ()
@@ -36,11 +25,6 @@ return {{
     })
   end
 }, {
-  "echasnovski/mini.map",
-  keys = {
-    {"<c-l>", function () return MiniMap.toggle() end},
-  },
-  config = function ()
-    require("mini.map").setup()
-  end
+  "echasnovski/mini.surround",
+  config = default_mini_setup("mini.surround"),
 }}

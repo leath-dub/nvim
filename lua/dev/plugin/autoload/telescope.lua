@@ -5,13 +5,6 @@ return {
   { "nvim-telescope/telescope-fzy-native.nvim", lazy = true },
   },
   cmd = "Telescope",
-  keys = {
-    {"<leader>pf", function () return require('telescope.builtin').find_files() end},
-    {"<leader>ps", function () return require('telescope.builtin').live_grep() end},
-    {"<leader>?", function () return require('telescope.builtin').help_tags() end},
-    {"<leader>b", function () return require("telescope.builtin").buffers() end},
-    {"<leader>r", function () return require("telescope.builtin").builtin() end}
-  },
   config = function()
     local ok, telescope = pcall(require, "telescope")
     if not ok then
@@ -39,5 +32,11 @@ return {
     }
     telescope.load_extension("fzy_native")
     telescope.load_extension("flutter")
+
+    vim.keymap.set("n", "<leader>pf", require('telescope.builtin').find_files, { desc = "Find File" })
+    vim.keymap.set("n", "<leader>ps", require('telescope.builtin').live_grep, { desc = "Search file"})
+    vim.keymap.set("n", "<leader>?", require('telescope.builtin').help_tags, { desc = "Telescope help tags"})
+    vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers, { desc = "Telescope buffers"})
+    vim.keymap.set("n", "<leader>r", require("telescope.builtin").builtin, { desc = "Run telescope builtin"})
   end
 }
