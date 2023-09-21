@@ -1,15 +1,11 @@
 return {
-  "decaycs/decay.nvim",
+  "rose-pine/neovim",
   config = function ()
-    local ok, decay = pcall(require, "decay")
+    local ok, rose_pine = pcall(require, "rose-pine")
     if not ok then
       error("Can't require decay ! :v")
     end
 
-    decay.setup {
-      style = "default",
-    }
-
-    vim.cmd("colorscheme decayce")
+    vim.cmd("colorscheme rose-pine")
   end,
 }

@@ -55,6 +55,8 @@ vim.api.nvim_create_autocmd("FileType", {
       dart = 2,
       html = 2,
       css = 2,
+      scss = 2,
+      haskell = 2,
       javascript = 2,
       markdown = { expandtab = true, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
         vim.cmd.set("spell")

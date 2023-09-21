@@ -119,7 +119,7 @@ return {
         Stat.mod.filetype,
         Stat.mod.git_diff
       },
-      theme = stat.lib.lualine('decay'),
+      theme = stat.lib.lualine("rose-pine"),
     }
   end
 }
