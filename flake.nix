@@ -18,7 +18,7 @@
 
         meta = {
           description = "Derivation storing my neovim configuration";
-        }
-      }
+        };
+      };
     };
 }
