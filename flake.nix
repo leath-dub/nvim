@@ -1,13 +1,18 @@
 {
   description = "My neovim config";
 
-  outputs = { self, nixpkgs }:
-    let
+  inputs = {
+    nixpkgs.url = "flake:nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
       };
     in {
-      packages.x86_64-linux.default = pkgs.stdenv.mkDerivation {
+      packages.${system}.default = pkgs.stdenv.mkDerivation {
         name = "neovim-conf";
         src = ./.;
 
@@ -20,5 +25,5 @@
           description = "Derivation storing my neovim configuration";
         };
       };
-    };
+    });
 }
