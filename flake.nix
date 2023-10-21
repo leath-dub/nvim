@@ -12,7 +12,7 @@
         inherit system;
       };
     in {
-      packages.${system}.default = pkgs.stdenv.mkDerivation {
+      packages.default = pkgs.stdenv.mkDerivation {
         name = "neovim-conf";
         src = ./.;
 
