@@ -1,19 +1,19 @@
 local function default_mini_setup(plg)
-  return function ()
+  return function()
     require(plg).setup()
   end
 end
 
-return {{
+return { {
   "echasnovski/mini.hipatterns",
-  config = function ()
+  config = function()
     local hipatterns = require("mini.hipatterns")
     hipatterns.setup({
       highlighters = {
-        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-        hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
-        todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
-        note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+        fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+        hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+        todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+        note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
     })
@@ -23,26 +23,28 @@ return {{
   config = default_mini_setup("mini.comment"),
 }, {
   "echasnovski/mini.indentscope",
-  config = function ()
+  config = function()
     require("mini.indentscope").setup({
       symbol = "│"
     })
   end
 }, {
   "echasnovski/mini.surround",
-  config = function ()
-    require("mini.surround").setup({mappings = {
-      add = '<c-s>a', -- Add surrounding in Normal and Visual modes
-      delete = '<c-s>d', -- Delete surrounding
-      find = '<c-s>f', -- Find surrounding (to the right)
-      find_left = '<c-s>F', -- Find surrounding (to the left)
-      highlight = '<c-s>h', -- Highlight surrounding
-      replace = '<c-s>r', -- Replace surrounding
-      update_n_lines = '<c-s>n', -- Update `n_lines`
+  config = function()
+    require("mini.surround").setup({
+      mappings = {
+        add = '<c-s>a',          -- Add surrounding in Normal and Visual modes
+        delete = '<c-s>d',       -- Delete surrounding
+        find = '<c-s>f',         -- Find surrounding (to the right)
+        find_left = '<c-s>F',    -- Find surrounding (to the left)
+        highlight = '<c-s>h',    -- Highlight surrounding
+        replace = '<c-s>r',      -- Replace surrounding
+        update_n_lines = '<c-s>n', -- Update `n_lines`
 
-      suffix_last = 'l', -- Suffix to search with "prev" method
-      suffix_next = 'n', -- Suffix to search with "next" method
-    }})
+        suffix_last = 'l',       -- Suffix to search with "prev" method
+        suffix_next = 'n',       -- Suffix to search with "next" method
+      }
+    })
   end,
 }, {
   "echasnovski/mini.files",
@@ -58,7 +60,7 @@ return {{
   }
 }, {
   "echasnovski/mini.clue",
-  config = function ()
+  config = function()
     local miniclue = require("mini.clue")
     miniclue.setup({
       triggers = {
@@ -94,4 +96,10 @@ return {{
       },
     })
   end,
-}}
+}, {
+  {
+    "echasnovski/mini.starter",
+    version = false,
+    opts = {},
+  },
+} }

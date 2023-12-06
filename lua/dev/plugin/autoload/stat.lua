@@ -14,9 +14,7 @@ local function get_buffers()
     if opts.cwd_only and not string.find(vim.api.nvim_buf_get_name(b), vim.loop.cwd(), 1, true) then
       return false
     end
-    if not opts.cwd_only and opts.cwd and not string.find(vim.api.nvim_buf_get_name(b), opts.cwd, 1, true) then
-      return false
-    end
+    if not opts.cwd_only and opts.cwd and not string.find(vim.api.nvim_buf_get_name(b), opts.cwd, 1, true) then return false end
     return true
   end, vim.api.nvim_list_bufs())
   local buffers = {}
@@ -101,7 +99,7 @@ end
 
 return {
   "leath-dub/stat.nvim",
-  event = "Colorscheme",
+  event = "UIEnter",
   config = function()
     local ok, stat = pcall(require, "stat")
     if not ok then
