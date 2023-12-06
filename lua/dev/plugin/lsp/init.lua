@@ -5,6 +5,7 @@ return {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "simrat39/rust-tools.nvim",
+    require("dev.plugin.lsp.completion"),
   },
   config = function()
     -- Mason stuff
@@ -26,8 +27,7 @@ return {
     vim.g.markdown_fenced_languages = { -- for denols
       "ts=typescript"
     }
-
-
+ 
     -- Lsp Keybinds
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
