@@ -6,6 +6,7 @@
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "9453e3d6cd2ca45d96e20f343e8f1b927364b630" },
   "mason.nvim": { "branch": "main", "commit": "41e75af1f578e55ba050c863587cffde3556ffa6" },
+  "mini.clue": { "branch": "main", "commit": "9d04c00d72faabff6a8bc873f5324a75a2d4b13f" },
   "mini.comment": { "branch": "main", "commit": "3d9c8009615857e982f09bc5357fc95f2a2175f3" },
   "mini.completion": { "branch": "main", "commit": "2931438a5eff65f003edc9274aaf4bc9ca0467be" },
   "mini.files": { "branch": "main", "commit": "3f8af5f9e4bbedbacbade760531464c0d679490d" },
@@ -29,6 +30,5 @@
   "templ.vim": { "branch": "main", "commit": "5cc48b93a4538adca0003c4bc27af844bb16ba24" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "undotree": { "branch": "master", "commit": "36ff7abb6b60980338344982ad4cdf03f7961ecd" },
-  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "zen-mode.nvim": { "branch": "main", "commit": "50e2e2a36cc97847d9ab3b1a3555ba2ef6839b50" }
 }
