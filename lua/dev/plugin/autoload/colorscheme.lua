@@ -6,6 +6,6 @@ return {
       error("Can't require decay ! :v")
     end
 
-    vim.cmd("colorscheme rose-pine")
+    vim.cmd("colorscheme rose-pine-dawn")
   end,
 }

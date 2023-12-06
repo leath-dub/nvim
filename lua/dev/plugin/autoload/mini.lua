@@ -40,4 +40,16 @@ return {{
       suffix_next = 'n', -- Suffix to search with "next" method
     }})
   end,
+}, {
+  "echasnovski/mini.files",
+  opts = {
+    window = {
+      preview = true,
+      width_focus = 30,
+      width_preview = 30,
+    },
+    options = {
+      use_as_default_explorer = true,
+    }
+  }
 }}

@@ -11,14 +11,22 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup {
       ensure_installed = { "gopls", "lua_ls", "rust_analyzer", "zls", "ansiblels", "pyright", "jdtls",
-        "kotlin_language_server", "svelte", "zk", "emmet_language_server" },
+        "kotlin_language_server", "svelte", "zk", "emmet_language_server", "tailwindcss" },
     }
+
     require("mason-lspconfig").setup_handlers {
       function(server_name)
         require("lspconfig")[server_name].setup {}
       end,
       require("dev.plugin.lsp.handlers"),
     }
+
+    require("lspconfig").ocamllsp.setup {} -- Special case for ocamllsp
+
+    vim.g.markdown_fenced_languages = { -- for denols
+      "ts=typescript"
+    }
+
 
     -- Lsp Keybinds
     vim.api.nvim_create_autocmd("LspAttach", {

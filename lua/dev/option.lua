@@ -10,6 +10,7 @@ vim.opt.cindent = true
 
 vim.opt.wrap = true
 vim.opt.breakindent = true
+vim.opt.linebreak = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -29,7 +30,7 @@ vim.opt.list = true
 vim.opt.laststatus = 3
 
 -- Remove The Skinny !!!
-vim.opt.guicursor = ''
+-- vim.opt.guicursor = ''
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -58,6 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
       scss = 2,
       haskell = 2,
       javascript = 2,
+      ocaml = 2,
       markdown = { expandtab = true, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
         vim.cmd.set("spell")
       end },
