@@ -30,7 +30,7 @@ vim.opt.list = true
 vim.opt.laststatus = 3
 
 -- Remove The Skinny !!!
--- vim.opt.guicursor = ''
+vim.opt.guicursor = ''
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
