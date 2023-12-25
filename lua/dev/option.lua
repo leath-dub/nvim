@@ -60,6 +60,7 @@ vim.api.nvim_create_autocmd("FileType", {
       haskell = 2,
       javascript = 2,
       ocaml = 2,
+      nix = 2,
       markdown = { expandtab = true, tabstop = 4, softtabstop = 4, shiftwidth = 4, callback = function ()
         vim.cmd.set("spell")
       end },
